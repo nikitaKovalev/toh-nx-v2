@@ -1,0 +1,33 @@
+{
+  "name": "toh-nx-v2-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/toh-nx-v2-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/toh-nx-v2-e2e/cypress.config.ts",
+        "devServerTarget": "toh-nx-v2:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "toh-nx-v2:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "toh-nx-v2:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/toh-nx-v2-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["toh-nx-v2"]
+}

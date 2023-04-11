@@ -1,11 +1,14 @@
-import { bootstrapApplication } from "@angular/platform-browser";
+import {bootstrapApplication} from '@angular/platform-browser';
 import {
-  provideRouter,
-  withEnabledBlockingInitialNavigation,
-} from "@angular/router";
-import { appRoutes } from "./app/app.routes";
-import { AppComponent } from "./app/app.component";
+    provideRouter,
+    withEnabledBlockingInitialNavigation,
+} from '@angular/router';
+
+import {AppComponent} from './app/app.component';
+import {appShellRoutes} from './app/app-shell.routes';
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(appRoutes, withEnabledBlockingInitialNavigation())],
+    providers: [
+        provideRouter(appShellRoutes, withEnabledBlockingInitialNavigation()),
+    ],
 }).catch((err) => console.error(err));

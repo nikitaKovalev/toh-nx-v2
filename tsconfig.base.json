@@ -15,6 +15,9 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
+            "@feature/toh-nx-v2/dashboard/feature-dashboard": [
+                "libs/toh-nx-v2/dashboard/feature-dashboard/src/index.ts"
+            ],
             "@page/toh-nx-v2/heroes/feature/hero-detail": [
                 "libs/toh-nx-v2/heroes/feature/hero-detail/src/index.ts"
             ],
@@ -25,11 +28,18 @@
             "@toh-nx-v2/shared/data-access/in-memory-data": [
                 "libs/shared/data-access/in-memory-data/src/index.ts"
             ],
+            "@toh-nx-v2/shared/model": ["libs/shared/model/src/index.ts"],
+            "@toh-nx-v2/shared/observable": [
+                "libs/shared/observable/src/index.ts"
+            ],
+            "@toh-nx-v2/shared/ui/filter": [
+                "libs/shared/ui/filter/src/index.ts"
+            ],
+            "@toh-nx-v2/shared/ui/mapper": [
+                "libs/shared/ui/mapper/src/index.ts"
+            ],
             "@toh-nx-v2/toh-nx-v2/core/models": [
                 "libs/toh-nx-v2/core/models/src/index.ts"
-            ],
-            "@toh-nx-v2/toh-nx-v2/dashboard/feature-dashboard": [
-                "libs/toh-nx-v2/dashboard/feature-dashboard/src/index.ts"
             ],
             "@toh-nx-v2/toh-nx-v2/heroes/feature/hero-shell": [
                 "libs/toh-nx-v2/heroes/feature/hero-shell/src/index.ts"

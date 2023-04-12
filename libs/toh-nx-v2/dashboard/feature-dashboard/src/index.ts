@@ -1,1 +1,1 @@
-export {default} from './lib/dashboard.component';
+export {default} from './lib/feature-dashboard.page';

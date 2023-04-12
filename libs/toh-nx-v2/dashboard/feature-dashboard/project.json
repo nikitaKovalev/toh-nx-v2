@@ -2,10 +2,17 @@
     "name": "toh-nx-v2-dashboard-feature-dashboard",
     "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "libs/toh-nx-v2/dashboard/feature-dashboard/src",
-    "prefix": "toh-nx-v2",
-    "tags": [],
     "projectType": "library",
     "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": [
+                    "libs/toh-nx-v2/dashboard/feature-dashboard/**/*.ts"
+                ]
+            }
+        },
         "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -19,16 +26,7 @@
                     "codeCoverage": true
                 }
             }
-        },
-        "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": [
-                    "libs/toh-nx-v2/dashboard/feature-dashboard/**/*.ts",
-                    "libs/toh-nx-v2/dashboard/feature-dashboard/**/*.html"
-                ]
-            }
         }
-    }
+    },
+    "tags": ["scope:toh-nx-v2", "domain:dashboard", "type:feature"]
 }

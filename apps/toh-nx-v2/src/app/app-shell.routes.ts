@@ -4,7 +4,7 @@ export const appShellRoutes: Route[] = [
     {
         path: 'dashboard',
         loadComponent: async () =>
-            import('@toh-nx-v2/toh-nx-v2/dashboard/feature-dashboard'),
+            import('@feature/toh-nx-v2/dashboard/feature-dashboard'),
     },
     {
         path: 'heroes',

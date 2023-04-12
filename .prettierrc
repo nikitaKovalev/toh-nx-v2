@@ -1,5 +1,26 @@
 {
     "singleQuote": true,
     "bracketSpacing": false,
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "trailingComma": "all",
+    "overrides": [
+        {
+            "files": [
+                "*.js",
+                "*.ts"
+            ],
+            "options": {
+                "printWidth": 90,
+                "parser": "typescript"
+            }
+        },
+        {
+            "files": [
+                "*.html"
+            ],
+            "options": {
+                "printWidth": 120, "parser": "angular"
+            }
+        }
+    ]
 }

@@ -2,27 +2,27 @@
     "root": true,
     "ignorePatterns": ["!**/*", "*.html", "*.md"],
     "plugins": ["@nrwl/nx"],
-    "extends": [
-        "@tinkoff/eslint-config/app",
-        "@tinkoff/eslint-config-angular",
-        "@tinkoff/eslint-config-angular/rxjs",
-        "@tinkoff/eslint-config-angular/promise",
-        "@tinkoff/eslint-config-angular/imports",
-        "@tinkoff/eslint-config-angular/unicorn",
-        "@tinkoff/eslint-config-angular/html-eslint",
-        "@tinkoff/eslint-config-angular/file-progress",
-        "@tinkoff/eslint-config-angular/line-statements",
-        "@tinkoff/eslint-config-angular/member-ordering",
-        "@tinkoff/eslint-config-angular/decorator-position",
-        "@tinkoff/eslint-config-angular/function-return-type",
-        "./scripts/eslint/naming-convention.js"
-    ],
     "parserOptions": {
         "project": ["./tsconfig.base.json"]
     },
     "overrides": [
         {
             "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+            "extends": [
+                "@tinkoff/eslint-config/app",
+                "@tinkoff/eslint-config-angular",
+                "@tinkoff/eslint-config-angular/rxjs",
+                "@tinkoff/eslint-config-angular/promise",
+                "@tinkoff/eslint-config-angular/imports",
+                "@tinkoff/eslint-config-angular/unicorn",
+                "@tinkoff/eslint-config-angular/html-eslint",
+                "@tinkoff/eslint-config-angular/file-progress",
+                "@tinkoff/eslint-config-angular/line-statements",
+                "@tinkoff/eslint-config-angular/member-ordering",
+                "@tinkoff/eslint-config-angular/decorator-position",
+                "@tinkoff/eslint-config-angular/function-return-type",
+                "./scripts/eslint/naming-convention.js"
+            ],
             "rules": {
                 "import/no-unresolved": "off",
                 "import/extensions": [
@@ -70,6 +70,11 @@
         {
             "files": "*.json",
             "parser": "jsonc-eslint-parser",
+            "rules": {}
+        },
+        {
+            "files": "*.html",
+            "extends": ["plugin:@nrwl/nx/angular-template"],
             "rules": {}
         }
     ]

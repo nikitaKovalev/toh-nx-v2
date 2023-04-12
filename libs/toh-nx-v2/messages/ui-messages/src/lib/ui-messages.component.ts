@@ -1,4 +1,5 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
+import {MessagesService} from '@toh-nx-v2/toh-nx-v2/messages/data-access-messages';
 
 import {uiMessagesImports} from './ui-messages.imports';
 
@@ -7,7 +8,9 @@ import {uiMessagesImports} from './ui-messages.imports';
     selector: 'ui-messages',
     templateUrl: 'ui-messages.template.html',
     styleUrls: ['./ui-messages.style.scss'],
-    imports: uiMessagesImports,
+    imports: [uiMessagesImports],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UiMessagesComponent {}
+export class UiMessagesComponent {
+    readonly messageService = inject(MessagesService);
+}

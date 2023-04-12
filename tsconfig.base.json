@@ -34,6 +34,9 @@
             "@toh-nx-v2/toh-nx-v2/heroes/feature/hero-shell": [
                 "libs/toh-nx-v2/heroes/feature/hero-shell/src/index.ts"
             ],
+            "@toh-nx-v2/toh-nx-v2/messages/data-access-messages": [
+                "libs/toh-nx-v2/messages/data-access-messages/src/index.ts"
+            ],
             "@ui/toh-nx-v2/messages/ui-messages": [
                 "libs/toh-nx-v2/messages/ui-messages/src/index.ts"
             ]

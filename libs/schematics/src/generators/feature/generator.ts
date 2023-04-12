@@ -1,12 +1,11 @@
 import {
-    addProjectConfiguration,
-    formatFiles,
     generateFiles,
     getWorkspaceLayout,
     names,
     offsetFromRoot,
     Tree,
 } from '@nrwl/devkit';
+import {libraryGenerator} from '@nrwl/workspace';
 import * as path from 'path';
 
 import {FeatureGeneratorSchema} from './schema';
@@ -31,7 +30,7 @@ function normalizeOptions(
         getWorkspaceLayout(tree).libsDir
     }/${projectDirectory}`;
     const parsedTags = options.tags
-        ? options.tags.split(',').map((s) => s.trim())
+        ? options.tags.split(',').map(s => s.trim())
         : [];
 
     return {
@@ -41,22 +40,6 @@ function normalizeOptions(
         projectDirectory,
         parsedTags,
     };
-}
-
-function addFiles(tree: Tree, options: NormalizedSchema) {
-    const templateOptions = {
-        ...options,
-        ...names(options.name),
-        offsetFromRoot: offsetFromRoot(options.projectRoot),
-        template: '',
-    };
-
-    generateFiles(
-        tree,
-        path.join(__dirname, 'files'),
-        options.projectRoot,
-        templateOptions
-    );
 }
 
 export default async function (tree: Tree, options: FeatureGeneratorSchema) {
@@ -71,17 +54,19 @@ export default async function (tree: Tree, options: FeatureGeneratorSchema) {
 
     const normalizedOptions = normalizeOptions(tree, options);
 
-    addProjectConfiguration(tree, normalizedOptions.projectName, {
-        root: normalizedOptions.projectRoot,
-        projectType: 'library',
-        sourceRoot: `${normalizedOptions.projectRoot}/src`,
-        targets: {
-            build: {
-                executor: '@toh-nx-v2/schematics:build',
-            },
-        },
-        tags: normalizedOptions.parsedTags,
-    });
-    addFiles(tree, normalizedOptions);
-    await formatFiles(tree);
+    await libraryGenerator(tree, options);
+
+    const templateOptions = {
+        ...options,
+        ...names(options.name),
+        offsetFromRoot: offsetFromRoot(normalizedOptions.projectRoot),
+        template: '',
+    };
+
+    generateFiles(
+        tree,
+        path.join(__dirname, 'files'),
+        normalizedOptions.projectRoot,
+        templateOptions
+    );
 }

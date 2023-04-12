@@ -24,6 +24,17 @@
         {
             "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
             "rules": {
+                "import/no-unresolved": "off",
+                "import/extensions": [
+                    "error",
+                    "ignorePackages",
+                    {
+                        "js": "never",
+                        "jsx": "never",
+                        "ts": "never",
+                        "tsx": "never"
+                    }
+                ],
                 "@nrwl/nx/enforce-module-boundaries": [
                     "error",
                     {

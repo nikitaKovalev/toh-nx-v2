@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
     displayName: 'toh-nx-v2-models',
     preset: '../../../jest.preset.js',

@@ -57,7 +57,19 @@
                 "type": "list",
                 "items": ["none", "dashboard", "heroes", "messages"]
             }
+        },
+        "singleFile": {
+            "type": "boolean",
+            "description": "Generate a single file",
+            "$default": {
+                "$source": "argv",
+                "index": 1
+            },
+            "x-prompt": {
+                "message": "Generate a single file?",
+                "type": "confirm"
+            }
         }
     },
-    "required": ["name"]
+    "required": ["name", "scope", "type", "domain"]
 }

@@ -4,6 +4,7 @@
     "license": "MIT",
     "private": true,
     "scripts": {
+        "run": "nx serve toh-nx-v2 --watch",
         "exec": "ts-node --project ./tools/tsconfig.tools.json",
         "postinstall": "npm run exec -- ./scripts/postinstall.ts",
         "lint": "eslint --cache --cache-location node_modules/.cache/eslint",

@@ -25,14 +25,17 @@
             "@toh-nx-v2/shared/data-access/in-memory-data": [
                 "libs/shared/data-access/in-memory-data/src/index.ts"
             ],
+            "@toh-nx-v2/toh-nx-v2/core/models": [
+                "libs/toh-nx-v2/core/models/src/index.ts"
+            ],
             "@toh-nx-v2/toh-nx-v2/dashboard/feature-dashboard": [
                 "libs/toh-nx-v2/dashboard/feature-dashboard/src/index.ts"
             ],
             "@toh-nx-v2/toh-nx-v2/heroes/feature/hero-shell": [
                 "libs/toh-nx-v2/heroes/feature/hero-shell/src/index.ts"
             ],
-            "@toh-nx-v2/toh-nx-v2/models": [
-                "libs/toh-nx-v2/models/src/index.ts"
+            "@ui/toh-nx-v2/messages/ui-messages": [
+                "libs/toh-nx-v2/messages/ui-messages/src/index.ts"
             ]
         }
     },

@@ -8,9 +8,7 @@ import {
 import {libraryGenerator} from '@nrwl/workspace';
 import * as path from 'path';
 
-import {getDirectory} from '../../utils/get-directory';
-import {getImportPath} from '../../utils/get-import-path';
-import {getTags} from '../../utils/get-tags';
+import {getDirectory, getImportPath, getName, getTags} from '../../util';
 import {FeatureGeneratorSchema} from './schema';
 
 interface NormalizedSchema extends FeatureGeneratorSchema {
@@ -49,6 +47,7 @@ export async function featureGenerator(
     tree: Tree,
     options: FeatureGeneratorSchema
 ) {
+    options.name = getName(options);
     options.tags = getTags(options);
     options.directory = getDirectory(options);
     options.importPath = getImportPath('feature', options);

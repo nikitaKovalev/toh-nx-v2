@@ -1,1 +1,1 @@
-export { <%= className %> } from './lib/<%= fileName %>.component';
+export { <%= className %>Component } from './lib/<%= fileName %>.component';

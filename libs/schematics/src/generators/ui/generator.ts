@@ -8,9 +8,7 @@ import {
 import {libraryGenerator} from '@nrwl/workspace';
 import * as path from 'path';
 
-import {getDirectory} from '../../utils/get-directory';
-import {getImportPath} from '../../utils/get-import-path';
-import {getTags} from '../../utils/get-tags';
+import {getDirectory, getImportPath, getName, getTags} from '../../util';
 import {UiGeneratorSchema} from './schema';
 
 interface NormalizedSchema extends UiGeneratorSchema {
@@ -46,6 +44,7 @@ function normalizeOptions(
 }
 
 export async function uiGenerator(tree: Tree, options: UiGeneratorSchema) {
+    options.name = getName(options);
     options.tags = getTags(options);
     options.directory = getDirectory(options);
     options.importPath = getImportPath('ui', options);

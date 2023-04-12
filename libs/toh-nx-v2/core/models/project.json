@@ -1,6 +1,6 @@
 {
     "name": "toh-nx-v2-models",
-    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "libs/toh-nx-v2/models/src",
     "prefix": "toh-nx-v2",
     "tags": [],

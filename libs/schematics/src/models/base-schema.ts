@@ -1,6 +1,5 @@
 import {Domain} from './domain';
 import {Scope} from './scope';
-import {Type} from './type';
 
 export interface BaseSchema {
     name: string;
@@ -9,4 +8,5 @@ export interface BaseSchema {
     importPath?: string;
     scope: Scope;
     domain: Domain;
+    singleFile: boolean;
 }

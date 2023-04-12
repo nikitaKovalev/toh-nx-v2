@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
+import {Hero} from '@toh-nx-v2/toh-nx-v2/core/models';
 import {InMemoryDbService} from 'angular-in-memory-web-api';
-import {Hero} from '@toh-nx-v2/toh-nx-v2/models';
 
 interface DB {
     heroes: Hero[];

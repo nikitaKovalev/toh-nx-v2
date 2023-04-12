@@ -1,5 +1,6 @@
-export interface UiGeneratorSchema {
-    name: string;
-    tags?: string;
-    directory?: string;
+import {BaseSchema} from '../../models/base-schema';
+import {Type} from '../../models/type';
+
+export interface UiGeneratorSchema extends BaseSchema {
+    type: Type['ui'];
 }

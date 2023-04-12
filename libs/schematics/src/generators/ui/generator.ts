@@ -1,14 +1,16 @@
 import {
-    addProjectConfiguration,
-    formatFiles,
     generateFiles,
     getWorkspaceLayout,
     names,
     offsetFromRoot,
     Tree,
 } from '@nrwl/devkit';
+import {libraryGenerator} from '@nrwl/workspace';
 import * as path from 'path';
 
+import {getDirectory} from '../../utils/get-directory';
+import {getImportPath} from '../../utils/get-import-path';
+import {getTags} from '../../utils/get-tags';
 import {UiGeneratorSchema} from './schema';
 
 interface NormalizedSchema extends UiGeneratorSchema {
@@ -31,7 +33,7 @@ function normalizeOptions(
         getWorkspaceLayout(tree).libsDir
     }/${projectDirectory}`;
     const parsedTags = options.tags
-        ? options.tags.split(',').map((s) => s.trim())
+        ? options.tags.split(',').map(s => s.trim())
         : [];
 
     return {
@@ -43,36 +45,28 @@ function normalizeOptions(
     };
 }
 
-function addFiles(tree: Tree, options: NormalizedSchema) {
+export async function uiGenerator(tree: Tree, options: UiGeneratorSchema) {
+    options.tags = getTags(options);
+    options.directory = getDirectory(options);
+    options.importPath = getImportPath('ui', options);
+
+    const normalizedOptions = normalizeOptions(tree, options);
+
+    await libraryGenerator(tree, options);
+
     const templateOptions = {
         ...options,
         ...names(options.name),
-        offsetFromRoot: offsetFromRoot(options.projectRoot),
+        offsetFromRoot: offsetFromRoot(normalizedOptions.projectRoot),
         template: '',
     };
 
     generateFiles(
         tree,
         path.join(__dirname, 'files'),
-        options.projectRoot,
+        normalizedOptions.projectRoot,
         templateOptions
     );
 }
 
-export default async function (tree: Tree, options: UiGeneratorSchema) {
-    const normalizedOptions = normalizeOptions(tree, options);
-
-    addProjectConfiguration(tree, normalizedOptions.projectName, {
-        root: normalizedOptions.projectRoot,
-        projectType: 'library',
-        sourceRoot: `${normalizedOptions.projectRoot}/src`,
-        targets: {
-            build: {
-                executor: '@toh-nx-v2/schematics:build',
-            },
-        },
-        tags: normalizedOptions.parsedTags,
-    });
-    addFiles(tree, normalizedOptions);
-    await formatFiles(tree);
-}
+export default uiGenerator;

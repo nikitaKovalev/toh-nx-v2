@@ -1,2 +1,2 @@
-export {default as feature} from './generators/feature/generator';
-export {default as ui} from './generators/ui/generator';
+export {featureGenerator} from './generators/feature/generator';
+export {uiGenerator} from './generators/ui/generator';

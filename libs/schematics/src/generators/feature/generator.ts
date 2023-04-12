@@ -8,6 +8,9 @@ import {
 import {libraryGenerator} from '@nrwl/workspace';
 import * as path from 'path';
 
+import {getDirectory} from '../../utils/get-directory';
+import {getImportPath} from '../../utils/get-import-path';
+import {getTags} from '../../utils/get-tags';
 import {FeatureGeneratorSchema} from './schema';
 
 interface NormalizedSchema extends FeatureGeneratorSchema {
@@ -42,15 +45,13 @@ function normalizeOptions(
     };
 }
 
-export default async function (tree: Tree, options: FeatureGeneratorSchema) {
-    const directory =
-        options.domain !== 'none'
-            ? `${options.scope}/${options.domain}/${options.type}`
-            : `${options.scope}/${options.type}`;
-
-    options.tags = `scope:${options.scope},domain:${options.domain},type:${options.type}`;
-    options.directory = directory;
-    options.importPath = `@page/${options.directory}/${options.name}`;
+export async function featureGenerator(
+    tree: Tree,
+    options: FeatureGeneratorSchema
+) {
+    options.tags = getTags(options);
+    options.directory = getDirectory(options);
+    options.importPath = getImportPath('feature', options);
 
     const normalizedOptions = normalizeOptions(tree, options);
 
@@ -70,3 +71,5 @@ export default async function (tree: Tree, options: FeatureGeneratorSchema) {
         templateOptions
     );
 }
+
+export default featureGenerator;

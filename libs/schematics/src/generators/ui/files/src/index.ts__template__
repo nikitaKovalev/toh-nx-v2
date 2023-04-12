@@ -1,1 +1,1 @@
-const variable = "<%= projectName %>";
+export { <%= className %> } from './lib/<%= fileName %>.component';

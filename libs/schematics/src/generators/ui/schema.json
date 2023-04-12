@@ -19,9 +19,44 @@
             "description": "Add tags to the project (used for linting)",
             "alias": "t"
         },
-        "directory": {
+        "scope": {
             "type": "string",
-            "description": "A directory where the project is placed"
+            "description": "Scope tag for library",
+            "$default": {
+                "$source": "argv",
+                "index": 1
+            },
+            "x-prompt": {
+                "message": "What is the scope tag for the library?",
+                "type": "list",
+                "items": ["toh-nx-v2", "shared"]
+            }
+        },
+        "type": {
+            "type": "string",
+            "description": "Type of library",
+            "$default": {
+                "$source": "argv",
+                "index": 1
+            },
+            "x-prompt": {
+                "message": "What type of library is being generated?",
+                "type": "list",
+                "items": ["ui"]
+            }
+        },
+        "domain": {
+            "type": "string",
+            "description": "Domain of library",
+            "$default": {
+                "$source": "argv",
+                "index": 1
+            },
+            "x-prompt": {
+                "message": "What type of domain is being generated?",
+                "type": "list",
+                "items": ["none", "dashboard", "heroes", "messages"]
+            }
         }
     },
     "required": ["name"]

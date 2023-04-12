@@ -1,13 +1,6 @@
-import {Domain} from '../../models/domain';
-import {Scope} from '../../models/scope';
+import {BaseSchema} from '../../models/base-schema';
 import {Type} from '../../models/type';
 
-export interface FeatureGeneratorSchema {
-    name: string;
-    tags?: string;
-    directory?: string;
-    importPath?: string;
-    scope: Scope;
-    domain: Domain;
+export interface FeatureGeneratorSchema extends BaseSchema {
     type: Type['feature'];
 }

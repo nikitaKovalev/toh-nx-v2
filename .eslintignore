@@ -1,2 +1,3 @@
 node_modules
 /libs/schematics/src/executors/
+*.md

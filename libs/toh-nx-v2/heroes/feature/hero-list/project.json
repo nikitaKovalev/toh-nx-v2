@@ -1,7 +1,7 @@
 {
-    "name": "toh-nx-v2-heroes-feature-heroes-list",
+    "name": "toh-nx-v2-heroes-feature-hero-list",
     "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "libs/toh-nx-v2/heroes/feature/heroes-list/src",
+    "sourceRoot": "libs/toh-nx-v2/heroes/feature/hero-list/src",
     "projectType": "library",
     "targets": {
         "lint": {
@@ -9,7 +9,7 @@
             "outputs": ["{options.outputFile}"],
             "options": {
                 "lintFilePatterns": [
-                    "libs/toh-nx-v2/heroes/feature/heroes-list/**/*.ts"
+                    "libs/toh-nx-v2/heroes/feature/hero-list/**/*.ts"
                 ]
             }
         },
@@ -17,7 +17,7 @@
             "executor": "@nrwl/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
             "options": {
-                "jestConfig": "libs/toh-nx-v2/heroes/feature/heroes-list/jest.config.ts",
+                "jestConfig": "libs/toh-nx-v2/heroes/feature/hero-list/jest.config.ts",
                 "passWithNoTests": true
             },
             "configurations": {

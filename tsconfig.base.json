@@ -15,8 +15,11 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@page/toh-nx-v2/heroes/feature/heroes-list": [
-                "libs/toh-nx-v2/heroes/feature/heroes-list/src/index.ts"
+            "@page/toh-nx-v2/heroes/feature/hero-detail": [
+                "libs/toh-nx-v2/heroes/feature/hero-detail/src/index.ts"
+            ],
+            "@page/toh-nx-v2/heroes/feature/hero-list": [
+                "libs/toh-nx-v2/heroes/feature/hero-list/src/index.ts"
             ],
             "@toh-nx-v2/schematics": ["libs/schematics/src/index.ts"],
             "@toh-nx-v2/shared/data-access/in-memory-data": [
@@ -24,6 +27,9 @@
             ],
             "@toh-nx-v2/toh-nx-v2/dashboard/feature-dashboard": [
                 "libs/toh-nx-v2/dashboard/feature-dashboard/src/index.ts"
+            ],
+            "@toh-nx-v2/toh-nx-v2/heroes/feature/hero-shell": [
+                "libs/toh-nx-v2/heroes/feature/hero-shell/src/index.ts"
             ],
             "@toh-nx-v2/toh-nx-v2/models": [
                 "libs/toh-nx-v2/models/src/index.ts"

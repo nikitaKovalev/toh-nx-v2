@@ -1,5 +1,5 @@
 export default {
-    displayName: 'toh-nx-v2-heroes-feature-heroes-list',
+    displayName: 'toh-nx-v2-heroes-feature-hero-list',
     preset: '../../../../../jest.preset.js',
     transform: {
         '^.+\\.[tj]sx?$': [
@@ -9,5 +9,5 @@ export default {
     },
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
     coverageDirectory:
-        '../../../../../coverage/libs/toh-nx-v2/heroes/feature/heroes-list',
+        '../../../../../coverage/libs/toh-nx-v2/heroes/feature/hero-list',
 };

@@ -8,8 +8,8 @@ export const appShellRoutes: Route[] = [
     },
     {
         path: 'heroes',
-        loadComponent: async () =>
-            import('@page/toh-nx-v2/heroes/feature/heroes-list'),
+        loadChildren: async () =>
+            import('@toh-nx-v2/toh-nx-v2/heroes/feature/hero-shell'),
     },
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
     {path: '**', redirectTo: '/dashboard'},

@@ -47,6 +47,9 @@
             "@toh-nx-v2/toh-nx-v2/messages/data-access-messages": [
                 "libs/toh-nx-v2/messages/data-access-messages/src/index.ts"
             ],
+            "@ui/toh-nx-v2/heroes/ui-hero-search": [
+                "libs/toh-nx-v2/heroes/ui-hero-search/src/index.ts"
+            ],
             "@ui/toh-nx-v2/messages/ui-messages": [
                 "libs/toh-nx-v2/messages/ui-messages/src/index.ts"
             ]

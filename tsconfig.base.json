@@ -41,6 +41,9 @@
             "@toh-nx-v2/toh-nx-v2/core/models": [
                 "libs/toh-nx-v2/core/models/src/index.ts"
             ],
+            "@toh-nx-v2/toh-nx-v2/heroes/data-access/hero": [
+                "libs/toh-nx-v2/heroes/data-access/hero/src/index.ts"
+            ],
             "@toh-nx-v2/toh-nx-v2/heroes/feature/hero-shell": [
                 "libs/toh-nx-v2/heroes/feature/hero-shell/src/index.ts"
             ],

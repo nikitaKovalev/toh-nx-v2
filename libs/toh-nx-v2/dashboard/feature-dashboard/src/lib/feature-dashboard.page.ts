@@ -1,8 +1,9 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {smartSearch} from '@toh-nx-v2/shared/observable';
 import {Hero} from '@toh-nx-v2/toh-nx-v2/core/models';
-import {map, of, switchMap, takeWhile, timer} from 'rxjs';
+import {HeroService} from '@toh-nx-v2/toh-nx-v2/heroes/data-access/hero';
+import {map, startWith, switchMap, takeWhile, timer} from 'rxjs';
 
 import {featureDashboardImports} from './feature-dashboard.imports';
 
@@ -16,9 +17,14 @@ const COUNTDOWN = 8;
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class FeatureDashboardPage {
+    private readonly heroService: HeroService = inject(HeroService);
+
     readonly control = new FormControl<string>('', {nonNullable: true});
 
-    readonly heroes$ = this.control.valueChanges.pipe(smartSearch(term => of()));
+    readonly heroes$ = this.control.valueChanges.pipe(
+        startWith(''),
+        smartSearch(term => this.heroService.searchHeroes(term)),
+    );
 
     readonly heroesBlurred$ = this.control.valueChanges.pipe(
         switchMap(() =>

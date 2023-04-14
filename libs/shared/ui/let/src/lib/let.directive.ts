@@ -7,7 +7,7 @@ import {LetContext} from './let.context';
  * the result of pipes calculation (i.e. async pipe)
  */
 @Directive({
-    selector: '[uiLet]',
+    selector: '[let]',
     standalone: true,
 })
 export class LetDirective<T> {

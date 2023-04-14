@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {FormControl} from '@angular/forms';
+import {DomSanitizer} from '@angular/platform-browser';
 import {smartSearch} from '@toh-nx-v2/shared/observable';
 import {Hero} from '@toh-nx-v2/toh-nx-v2/core/models';
 import {HeroService} from '@toh-nx-v2/toh-nx-v2/heroes/data-access/hero';
@@ -18,6 +19,7 @@ const COUNTDOWN = 8;
 })
 export default class FeatureDashboardPage {
     private readonly heroService: HeroService = inject(HeroService);
+    private readonly sanitizer = inject(DomSanitizer);
 
     readonly control = new FormControl<string>('', {nonNullable: true});
 
@@ -33,7 +35,7 @@ export default class FeatureDashboardPage {
                 takeWhile(Boolean, true),
             ),
         ),
-        map(counter => ({filter: `blur(${counter}px)`})),
+        map(counter => this.sanitizer.bypassSecurityTrustStyle(`blur(${counter}px)`)),
     );
 
     readonly filterValue = (hero: Hero, value: string): boolean => {

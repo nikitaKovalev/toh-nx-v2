@@ -25,9 +25,6 @@
                 "libs/toh-nx-v2/heroes/feature/hero-list/src/index.ts"
             ],
             "@toh-nx-v2/schematics": ["libs/schematics/src/index.ts"],
-            "@toh-nx-v2/shared/data-access/in-memory-data": [
-                "libs/shared/data-access/in-memory-data/src/index.ts"
-            ],
             "@toh-nx-v2/shared/model": ["libs/shared/model/src/index.ts"],
             "@toh-nx-v2/shared/observable": [
                 "libs/shared/observable/src/index.ts"
@@ -38,12 +35,16 @@
             "@toh-nx-v2/shared/ui/filter": [
                 "libs/shared/ui/filter/src/index.ts"
             ],
+            "@toh-nx-v2/shared/ui/for": ["libs/shared/ui/for/src/index.ts"],
             "@toh-nx-v2/shared/ui/let": ["libs/shared/ui/let/src/index.ts"],
             "@toh-nx-v2/shared/ui/mapper": [
                 "libs/shared/ui/mapper/src/index.ts"
             ],
             "@toh-nx-v2/shared/util/route-param": [
                 "libs/shared/util/route-param/src/index.ts"
+            ],
+            "@toh-nx-v2/toh-nx-v2/core/data-access/in-memory-data": [
+                "libs/toh-nx-v2/core/data-access/in-memory-data/src/index.ts"
             ],
             "@toh-nx-v2/toh-nx-v2/core/models": [
                 "libs/toh-nx-v2/core/models/src/index.ts"

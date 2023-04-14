@@ -1,10 +1,9 @@
-/* eslint-disable */
 export default {
-    displayName: 'shared-data-access-in-memory-data',
-    preset: '../../../../jest.preset.js',
+    displayName: 'toh-nx-v2-core-data-access-in-memory-data',
+    preset: '../../../../../jest.preset.js',
     setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
     coverageDirectory:
-        '../../../../coverage/libs/shared/data-access/in-memory-data',
+        '../../../../../coverage/libs/toh-nx-v2/core/data-access/in-memory-data',
     transform: {
         '^.+\\.(ts|mjs|js|html)$': [
             'jest-preset-angular',

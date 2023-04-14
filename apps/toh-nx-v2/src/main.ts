@@ -3,7 +3,7 @@ import {importProvidersFrom} from '@angular/core';
 import {bootstrapApplication} from '@angular/platform-browser';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {provideRouter, withEnabledBlockingInitialNavigation} from '@angular/router';
-import {InMemoryDataService} from '@toh-nx-v2/shared/data-access/in-memory-data';
+import {InMemoryDataService} from '@toh-nx-v2/toh-nx-v2/core/data-access/in-memory-data';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 import {AppComponent} from './app/app.component';

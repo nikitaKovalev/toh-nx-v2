@@ -1,1 +1,18 @@
-<p>HeroDetail works!</p>
+<div *ngIf="hero$ | async as hero">
+    <h2>{{ hero.name | uppercase }} Details</h2>
+    <div>
+        <span>id:</span>
+        {{ hero.id }}
+    </div>
+
+    <div>
+        <label for="hero-name">Hero name:</label>
+        <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name" />
+    </div>
+
+    <button (click)="goBack()" type="button">go back</button>
+    <button [disabled]="disabledSave$ | async" (click)="save(hero)" type="button">save</button>
+
+    <!-- Don't repeat, it's just an example -->
+    <ng-container *ngIf="saveHero$ | async"></ng-container>
+</div>

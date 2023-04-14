@@ -32,11 +32,18 @@
             "@toh-nx-v2/shared/observable": [
                 "libs/shared/observable/src/index.ts"
             ],
+            "@toh-nx-v2/shared/service/destroy": [
+                "libs/shared/service/destroy/src/index.ts"
+            ],
             "@toh-nx-v2/shared/ui/filter": [
                 "libs/shared/ui/filter/src/index.ts"
             ],
+            "@toh-nx-v2/shared/ui/let": ["libs/shared/ui/let/src/index.ts"],
             "@toh-nx-v2/shared/ui/mapper": [
                 "libs/shared/ui/mapper/src/index.ts"
+            ],
+            "@toh-nx-v2/shared/util/route-param": [
+                "libs/shared/util/route-param/src/index.ts"
             ],
             "@toh-nx-v2/toh-nx-v2/core/models": [
                 "libs/toh-nx-v2/core/models/src/index.ts"
